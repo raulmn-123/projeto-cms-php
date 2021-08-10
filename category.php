@@ -18,8 +18,13 @@
 
             <!-- First Blog Post -->
             <?php
+            
+            if(isset($_GET['cat_id']))
+            {
+                $post_category_id = $_GET['cat_id'];
+            }
 
-            $query = "SELECT * FROM posts";
+            $query = "SELECT * FROM posts WHERE post_category_id = '{$post_category_id}'";
 
             $results = mysqli_query($conn, $query);
             while ($rows = mysqli_fetch_assoc($results)) {

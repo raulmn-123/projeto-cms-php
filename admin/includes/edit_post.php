@@ -70,7 +70,8 @@ if (isset($_POST['update_post'])) {
         </label>
     </div>
     <div class="form-group">
-        <select name="post_category">
+        <label for="post_category">Post Category: </label>
+        <select name="post_category" id="post_category">
             <?php
             $query = "SELECT * FROM categories";
             $results = mysqli_query($conn, $query);

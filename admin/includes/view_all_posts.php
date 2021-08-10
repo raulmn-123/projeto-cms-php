@@ -16,10 +16,10 @@
 
         <?php
 
-        $query = "SELECT * FROM posts";
+        $query_posts = "SELECT * FROM posts";
 
-        $results = mysqli_query($conn, $query);
-        while ($rows = mysqli_fetch_assoc($results)) {
+        $results_posts = mysqli_query($conn, $query_posts);
+        while ($rows = mysqli_fetch_assoc($results_posts)) {
 
             $post_id = $rows['post_id'];
             $post_title = $rows['post_title'];
@@ -31,15 +31,30 @@
             $post_tags = $rows['post_tags'];
             $post_comment_count = $rows['post_comment_count'];
             $post_date = $rows['post_date'];
+            $post_category_id = $rows['post_category_id'];
 
         ?>
             <tr>
                 <td><?php echo $post_id ?></td>
                 <td><?php echo $post_author ?></td>
                 <td><?php echo $post_title ?></td>
-                <td>the category of the post</td>
+
+                <?php
+                $query = "SELECT * FROM categories WHERE cat_id = '{$post_category_id}'";
+                $results = mysqli_query($conn, $query);
+
+                while ($rows = mysqli_fetch_assoc($results)) {
+                    $cat_id = $rows['cat_id'];
+                    $cat_title = $rows['cat_title'];
+
+                    echo "<td>$cat_title</td>";
+                }
+
+
+                ?>
+
                 <td><?php echo $post_status ?></td>
-                <td><img  width="250" src="../images/<?php echo $post_image; ?>" alt=""></td>
+                <td><img width="250" src="../images/<?php echo $post_image; ?>" alt=""></td>
                 <td><?php echo $post_tags ?></td>
                 <td>the comments of the post</td>
                 <td><?php echo $post_date ?></td>
@@ -48,6 +63,7 @@
             </tr>
         <?php } ?>
     </tbody>
+
 </table>
 
 <?php

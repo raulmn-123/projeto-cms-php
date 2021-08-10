@@ -42,7 +42,8 @@
                     while ($rows = mysqli_fetch_assoc($results)) {
 
                         $cat_title = $rows['cat_title'];
-                        echo "<li><a href=''>{$cat_title}</a></li>";
+                        $cat_id = $rows['cat_id'];
+                        echo "<li><a href='category.php?cat_id=$cat_id'>{$cat_title}</a></li>";
                     }
                     ?>
                 </ul>

@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="index.php">CMS Project</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -24,7 +24,9 @@
             while($rows = mysqli_fetch_assoc($results)){
                 
                 $cat_title = $rows['cat_title'];
-                echo "<li><a href=''>{$cat_title}</a></li>";
+                $cat_id = $rows['cat_id'];
+
+                echo "<li><a href='category.php?cat_id=$cat_id'>{$cat_title}</a></li>";
             }
 
         ?>
