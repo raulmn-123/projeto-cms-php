@@ -10,6 +10,8 @@
             <th>Tags</th>
             <th>Comments</th>
             <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -56,7 +58,7 @@
                 <td><?php echo $post_status ?></td>
                 <td><img width="250" src="../images/<?php echo $post_image; ?>" alt=""></td>
                 <td><?php echo $post_tags ?></td>
-                <td>the comments of the post</td>
+                <td><?php echo $post_comment_count; ?></td>
                 <td><?php echo $post_date ?></td>
                 <td><?php echo "<a href='post.php?source=edit_post&p_id=$post_id'>Edit</a>"; ?></td>
                 <td><?php echo "<a href='post.php?delete=$post_id'>Delete</a>"; ?></td>
@@ -76,6 +78,9 @@ if (isset($_GET['delete'])) {
     if (!$results) {
         die("Query failed" . mysqli_error($conn));
     }
+    $query_decrement_commentField = "UPDATE posts SET post_comment_count = post_comment_count - 1 WHERE post_id = $get_post_id";
+    $update_comment_count = mysqli_query($conn, $query_decrement_commentField);
+    header("Location: post.php");
 }
 
 ?>

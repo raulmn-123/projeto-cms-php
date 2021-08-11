@@ -143,7 +143,7 @@
                 <a href="/projeto-cms/admin/categories.php"><i class="fa fa-fw fa-dashboard"></i> Categories</a>
             </li>
             <li>
-                <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Comments</a>
+                <a href="/projeto-cms/admin/comments.php"><i class="fa fa-fw fa-bar-chart-o"></i> Comments</a>
             </li>
             <li>
                 <a href="tables.html"><i class="fa fa-fw fa-table"></i> Profile</a>
