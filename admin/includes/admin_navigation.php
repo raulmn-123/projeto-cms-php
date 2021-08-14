@@ -109,7 +109,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    <a href="../includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                 </li>
             </ul>
         </li>
@@ -121,10 +121,10 @@
                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" class="collapse">
                     <li>
-                        <a href="./post.php">View All Posts</a>
+                        <a href="post.php">View All Posts</a>
                     </li>
                     <li>
-                        <a href="./post.php?source=add_post">Add new Post</a>
+                        <a href="post.php?source=add_post">Add new Post</a>
                     </li>
                 </ul>
             </li>
@@ -132,10 +132,10 @@
                 <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="users" class="collapse">
                     <li>
-                        <a href="#">View All Users</a>
+                        <a href="users.php">View All Users</a>
                     </li>
                     <li>
-                        <a href="#">Add new User</a>
+                        <a href="users.php?source=add_user">Add new User</a>
                     </li>
                 </ul>
             </li>
@@ -146,7 +146,7 @@
                 <a href="/projeto-cms/admin/comments.php"><i class="fa fa-fw fa-bar-chart-o"></i> Comments</a>
             </li>
             <li>
-                <a href="tables.html"><i class="fa fa-fw fa-table"></i> Profile</a>
+                <a href="profile.php"><i class="fa fa-fw fa-table"></i> Profile</a>
             </li>
         </ul>
     </div>

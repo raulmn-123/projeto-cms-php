@@ -54,7 +54,7 @@
                 <td><?php echo  $comment_date ?></td>
                 <td><?php echo "<a href='comments.php?approve=$comment_id'>Approve</a>"; ?></td>
                 <td><?php echo "<a href='comments.php?unapprove=$comment_id'>Unapprove</a>"; ?></td>
-                <td><?php echo "<a href='comments.php?source=edit_post&p_id='>Edit</a>"; ?></td>
+                <td><?php echo "<a href='comments.php?source=edit_comment&c_id='>Edit</a>"; ?></td>
                 <td><?php echo "<a href='comments.php?delete=$comment_id'>Delete</a>"; ?></td>
             </tr>
         <?php } ?>
