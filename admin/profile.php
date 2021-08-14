@@ -35,9 +35,9 @@
         //$post_image_tmp = $_FILES['image']['tmp_name'];
         $user_email = $_POST['user_email'];
         $user_password = $_POST['user_password'];
-    
+
         //move_uploaded_file($post_image_tmp, "../images/$post_image");
-    
+
         /*
         if(empty($post_image))
         {
@@ -49,7 +49,7 @@
             }
         }
         */
-    
+
         $query_update_profile = "UPDATE users SET "; // -> You need whitespace after SET
         $query_update_profile .= "user_role = '{$user_role}', ";
         $query_update_profile .= "user_firstname = '{$user_firstname}', ";
@@ -57,9 +57,9 @@
         $query_update_profile .= "user_email = '{$user_email}', ";
         $query_update_profile .= "user_password = '{$user_password}'";
         $query_update_profile .= "WHERE user_username = '{$session_user_username}' ";
-    
+
         $update_profile = mysqli_query($conn, $query_update_profile);
-    
+
         if (!$update_profile) {
             die("Query failed." . mysqli_error($conn));
         }
